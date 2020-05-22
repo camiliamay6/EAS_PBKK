@@ -13,8 +13,8 @@ $config = require __DIR__ . '/../config/config.php';
 include_once __DIR__ . '/../config/loader.php';
 include_once __DIR__ . '/../config/services.php';
 
-$container->setDI($container);
-$loader = new Loader();
+
+
 
 $container->set(
     'dispatcher',
@@ -38,6 +38,15 @@ $container->set(
         return $view;
     }
 );
+
+$container->set(
+    'router',
+    function(){
+        require __DIR__ . '/../config/routing.php';
+        return $router;
+    }
+);
+$container->setDI($container);
 
 $application = new Application($container);
 

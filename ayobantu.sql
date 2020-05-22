@@ -4,21 +4,6 @@ GRANT ALL PRIVILEGES ON ayobantu.* TO 'meila'@'localhost';
 
 USE ayobantu;
 
-CREATE TABLE IF NOT EXISTS `users`(
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `nama_user` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-    `alamat_user` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-    `nomor_telepon_user` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-    `email_user` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-    `password_user` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-    `created_at` datetime NOT NULL,
-    PRIMARY KEY (`id`),
-    UNIQUE KEY `idx_email_user` (`email_user`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
-AUTO_INCREMENT=1;
-
-DROP TABLE `users`;
-
 CREATE TABLE IF NOT EXISTS `kategori`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `nama_kategori` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
