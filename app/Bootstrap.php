@@ -1,7 +1,5 @@
 <?php
 
-
-
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Loader;
 use Phalcon\Mvc\Application;

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayo Bantu</title>
+    <title>Dashboard Admin</title>
 </head>
 <body>
-    <h1>Halaman Home User</h1>
+    <h1>Ini Halaman Dashboard Admin</h1>
 </body>
 </html>

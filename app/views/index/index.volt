@@ -1,1 +1,11 @@
-<h1>Berhasill !!!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayo Bantu</title>
+</head>
+<body>
+    <h1>Halaman Home User</h1>
+</body>
+</html>
