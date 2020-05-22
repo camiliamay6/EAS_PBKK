@@ -64,4 +64,29 @@ ON UPDATE NO ACTION,
 ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY (`id_produk`) REFERENCES `produk` (`id`)
 ON UPDATE NO ACTION;
 
-CREATE TABLE IF NOT EXISTS `daftar_bantuan` 
+CREATE TABLE IF NOT EXISTS `daftar_bantuan` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `id_keranjang` int(11) NOT NULL,
+    `status_bantuan` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Belum Melakukan Pembayaran',
+    `sudah_bayar` tinyint(1) NOT NULL DEFAULT '0',
+    `created_at` datetime NOT NULL,
+    `updated_at` datetime DEFAULT NULL,
+    PRIMARY KEY (`id`),
+    KEY `id_keranjang` (`id_keranjang`)
+) ENGINE=InnoDB CHARSET=utf8 COLLATE=utf8_unicode_ci
+AUTO_INCREMENT=1;
+
+ALTER TABLE `daftar_bantuan`
+ADD CONSTRAINT `keranjang_ibfk_1` FOREIGN KEY(`id_keranjang`) REFERENCES `keranjang` (`id`)
+ON UPDATE CASCADE ON DELETE CASCADE;
+
+CREATE TABLE IF NOT EXISTS `admin`(
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `nama_admin` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+    `email_user` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+    `password_user` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+    `created_at` datetime NOT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `idx_email_admin` (`email_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+AUTO_INCREMENT=1;

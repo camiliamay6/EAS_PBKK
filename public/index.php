@@ -1,54 +1,82 @@
 <?php
 
-use Phalcon\Di\FactoryDefault;
-use Phalcon\Loader;
-use Phalcon\Mvc\Application;
-use Phalcon\Mvc\Dispatcher;
-use Phalcon\Mvc\View;
+header('Content-Type: text/html; charset=utf-8');
+mb_internal_encoding("UTF-8");
 
-$loader = new Loader();
-$loader->registerNamespaces(
-    [
-        'App\Controllers' => __DIR__.'/../app/controllers',
-        'App\Models' => __DIR__.'../app/models',
-    ]
-);
+require_once __DIR__ . '/../app/Bootstrap.php';
 
-$loader->register();
 
-$container = new FactoryDefault();
+// use Phalcon\Di\FactoryDefault;
+// use Phalcon\Loader;
+// use Phalcon\Mvc\Application;
+// use Phalcon\Mvc\Dispatcher;
+// use Phalcon\Mvc\View;
 
-$container->set(
-    'dispatcher',
-    function(){
-        $dispatcher = new Dispatcher();
-        $dispatcher->setDefaultNamespace(
-            'App\Controllers'
-        );
-        return $dispatcher;
-    }
-);
+// $loader = new Loader();
+// $loader->registerNamespaces(
+//     [
+//         'App\Controllers' => __DIR__.'/../app/controllers',
+//         'App\Models' => __DIR__.'../app/models',
+//     ]
+// );
 
-$container->set(
-    'view',
-    function(){
-        $view = new View();
-        $view->setViewsDir(
-            __DIR__.'/../app/views/'
-        );
+// $loader->register();
 
-        return $view;
-    }
-);
 
-$application = new Application($container);
+// $container = new FactoryDefault();
 
-try{
-    $response = $application->handle(
-        $_SERVER["REQUEST_URI"]
-    );
+// $container->set(
+//     'dispatcher',
+//     function(){
+//         $dispatcher = new Dispatcher();
+//         $dispatcher->setDefaultNamespace(
+//             'App\Controllers'
+//         );
+//         return $dispatcher;
+//     }
+// );
 
-    $response->send();
-} catch(\Exception $e) {
-    echo $e->getMessage();
-}
+// $container->set(
+//     'voltService',
+//     function(){
+//         $volt = new \Phalcon\Mvc\View\Engine\Volt
+//     }
+// )
+// $container->set(
+//     'view',
+//     function(){
+//         $view = new View();
+//         $view->setViewsDir(
+//             __DIR__.'/../app/views/'
+//         );
+
+//         return $view;
+//     }
+// );
+
+// $container->set(
+//     'db',
+//     function(){
+//         return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
+//             "host" => "localhost",
+//             "username" => "meila",
+//             "password" => "06051999",
+//             "dbname" => "ayobantu"
+//         ));
+//     }
+// );
+
+
+// $application = new Application($container);
+
+// try{
+//     $response = $application->handle(
+//         $_SERVER["REQUEST_URI"]
+//     );
+
+//     $response->send();
+// } catch(\Exception $e) {
+//     echo $e->getMessage();
+// }
+
+?>
