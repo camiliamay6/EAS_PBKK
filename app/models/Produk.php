@@ -8,6 +8,12 @@ use Phalcon\Validation\Validator\Uniqueness;
 
 class Produk extends Base
 {
+    protected $id;
+    protected $nama_produk;
+    protected $id_kategori;
+    protected $updated_at;
+    protected $created_at;
+
     public function initialize()
     {
         $this->hasMany(
@@ -29,30 +35,51 @@ class Produk extends Base
                 'reusable' => true
             )
         );
-
-        $this->addBehavior(new Timestampable(array(
-            'beforeValidationOnCreate' => array(
-                'field' => 'created_at',
-                'format' => 'd-m-Y H:i'
-            ),
-            'beforeValidationOnUpdate' => array(
-                'field' => 'updated_at',
-                'format' => 'd-m-Y H:i'
-            )
-        )));
     }
+    
 
-    public function validation()
+    public function setNamaProduk($nama_produk)
     {
-        $validator = new Validation();
-
-        $validator->add(
-            'nama_produk',
-            new Uniqueness([
-                "message" => "Nama produk sudah ada"
-            ])
-        );
-
-        return $this->validate($validator);
+        $this->nama_produk = $nama_produk;
+        return $this;
     }
+
+    public function setIdKategori($id_kategori)
+    {
+        $this->id_kategori = $id_kategori;
+        return $this;
+    }
+    
+    public function setUpdatedAt($updated_at)
+    {
+        $this->updated_at = $updated_at;
+        return $this;
+    }
+
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+        return $this;
+    }
+    public function getId()
+    {
+        return $this->id;
+    }
+    public function getNamaProduk()
+    {
+        return $this->nama_produk;
+    }
+    public function getIdKategori()
+    {
+        return $this->id_kategori;
+    }
+    public function getupdatedAt()
+    {
+        return $this->updated_at;
+    }
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
 }

@@ -61,9 +61,4 @@ class Kategori extends Base
     {
         return $this->created_at;
     }
-
-    public function find($parameter = Null){
-        $result = Kategori::find($parameter);
-        return $result;
-    }
 }

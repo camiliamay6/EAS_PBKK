@@ -18,10 +18,8 @@ Daftar Kategori
         <tbody>
             {% for category in categories %}>
             <tr>
-                <td>{{ category->id }}</td>
-                <td>{{ category->nama_kategori }}</td>
-                <!-- <td><a href="{{ url('article/edit/' ~ article.getId()) }}">Edit</a></td>
-                <td><a href="{{ url('article/delete' ~ article.getId()) }}">Delete</a></td> -->
+                <td>{{ category.id }}</td>
+                <td>{{ category.nama_kategori }}</td>
             </tr>
             {% endfor %}
         </tbody>

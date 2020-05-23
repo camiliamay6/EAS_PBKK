@@ -8,11 +8,9 @@ class KategoriController extends BaseController
 {
     public function listKategoriAction()
     {
-        $this->view->disable();
-        $kategori = new Kategori();
-        var_dump($kategori->find());
+        $kategori = Kategori::find();
         $this->view->setVar('categories', $kategori);
-        $this->view->pick('kategori/list');
+        return $this->view->pick('kategori/list');
     }
 
     public function tampilTambahKategoriAction()

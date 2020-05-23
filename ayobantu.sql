@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS `produk`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `nama_produk` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
     `id_kategori` int(11) COLLATE utf8_unicode_ci NOT NULL,
-    `created_at` datetime NOT NULL,
-    `updated_at` datetime DEFAULT NULL,
+    `created_at` varchar(50) COLLATE utf8_unicode_ci,
+    `updated_at` varchar(50) COLLATE utf8_unicode_ci,
     PRIMARY KEY (`id`),
     UNIQUE KEY `idx_nama_produk` (`nama_produk`),
     KEY `id_kategori` (`id_kategori`)

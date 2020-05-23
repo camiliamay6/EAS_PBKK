@@ -46,7 +46,16 @@
         'controller' => 'produk',
         'action' => 'listProduk'
     ));
+
+    $router->add('/produk/tambah', array(
+        'controller' => 'produk',
+        'action' => 'tampilTambahProduk'
+    ));
     
+    $router->add('/produk/tambah/submit', array(
+        'controller' => 'produk',
+        'action' => 'tambahProduk'
+    ));
     $router->add('/bantuan/tambah', array(
         'controller' => 'bantuan',
         'action' => 'tampilTambahBantuan'
