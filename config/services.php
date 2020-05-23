@@ -13,7 +13,7 @@ $container['url'] = function() use($config, $container){
     return $url;
 };
 
-$container['url']->setBaseUri('' . $config->application->baseUri. '');
+
 
 $container['voltService'] = function ($view) use ($config) {
     $volt = new \Phalcon\Mvc\View\Engine\Volt($view, $this);

@@ -5,6 +5,7 @@ use Phalcon\Loader;
 use Phalcon\Mvc\Application;
 use Phalcon\Mvc\Dispatcher;
 use Phalcon\Mvc\View;
+use Phalcon\Session\Adapter\Files as Session;
 
 
 $container = new FactoryDefault();
@@ -44,6 +45,17 @@ $container->set(
     function(){
         require __DIR__ . '/../config/routing.php';
         return $router;
+    }
+);
+
+$container->set(
+    'session',
+    function(){
+        $session = new Session();
+
+        $session->start();
+
+        return $session;
     }
 );
 $container->setDI($container);
