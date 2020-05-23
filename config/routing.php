@@ -18,6 +18,10 @@
         'action' => 'tampilRegister'
     ));
 
+    // $router->add('/tambah/admin', array(
+    //     'controller' => 'admin',
+    //     'action' => 'register'
+    // ));
     $router->add('/bantuan', array(
         'controller' => 'bantuan',
         'action' => 'listBantuan'
@@ -26,6 +30,16 @@
     $router->add('/kategori', array(
         'controller' => 'kategori',
         'action' => 'listKategori'
+    ));
+
+    $router->add('/kategori/tambah', array(
+        'controller' => 'kategori',
+        'action' => 'tampilTambahKategori'
+    ));
+
+    $router->add('/kategori/tambah/submit', array(
+        'controller' => 'kategori',
+        'action' => 'tambahKategori'
     ));
 
     $router->add('/produk', array(

@@ -7,8 +7,8 @@ USE ayobantu;
 CREATE TABLE IF NOT EXISTS `kategori`(
     `id` int(11) NOT NULL AUTO_INCREMENT,
     `nama_kategori` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-    `created_at` datetime NOT NULL,
-    `update_at` datetime DEFAULT NULL,
+    `created_at` varchar(50) COLLATE utf8_unicode_ci,
+    `updated_at` varchar(50) COLLATE utf8_unicode_ci,
     PRIMARY KEY (`id`),
     UNIQUE KEY `idx_nama_kategori` (`nama_kategori`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `admin`(
     `nama_admin` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
     `email_admin` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
     `password_admin` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-    `created_at` datetime NOT NULL,
+    `created_at` varchar(50) COLLATE utf8_unicode_ci,
     PRIMARY KEY (`id`),
     UNIQUE KEY `idx_email_admin` (`email_admin`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci

@@ -5,10 +5,13 @@ use Phalcon\Loader;
 use Phalcon\Mvc\Application;
 use Phalcon\Mvc\Dispatcher;
 use Phalcon\Mvc\View;
-use Phalcon\Session\Adapter\Files as Session;
-
+use Phalcon\Session\Manager;
+use Phalcon\Session\Adapter\Stream;
+use Phalcon\Db\Adapter\Pdo\Mysql;
 
 $container = new FactoryDefault();
+
+$application = new Application($container);
 
 $config = require __DIR__ . '/../config/config.php';
 include_once __DIR__ . '/../config/loader.php';
@@ -51,17 +54,37 @@ $container->set(
 $container->set(
     'session',
     function(){
-        $session = new Session();
+        $session = new Manager();
+        $files = new Stream(array(
+            'savePath' => '/tmp',
+        ));
 
+        $session->setAdapter($files);
         $session->start();
 
         return $session;
     }
 );
-$container->setDI($container);
 
-$application = new Application($container);
+$container->set(
+    'db',
+    function(){
+        return new Mysql(array(
+            'host' => 'localhost',
+            'username' => 'root',
+            'password' => '12345678',
+            'dbname' => 'ayobantu'
+        ));
+    }
+);
 
+$debug = new \Phalcon\Debug();
+$debug->listen();
+
+
+
+
+$application->setDI($container);
 try{
     $response = $application->handle(
         $_SERVER["REQUEST_URI"]

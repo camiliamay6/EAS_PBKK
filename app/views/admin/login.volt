@@ -9,7 +9,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
-            <form action="/admin/login">
+            <form action="/admin/login" method="POST">
                 <h1 align="center">Login</h1>
                 <div class="form-group">
                     <label for="email">Email</label>

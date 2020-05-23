@@ -12,7 +12,6 @@ return new \Phalcon\Config(array(
     ),
 
     'database' => array(
-        'adapter' => 'Mysql',
         'host' => 'localhost',
         'username' => 'meila',
         'password' => '06051999',

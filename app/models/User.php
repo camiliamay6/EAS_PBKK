@@ -21,32 +21,7 @@ class User extends Base
             )
         );
 
-        $this->addBehavior(new Timestampable(array(
-            'beforeValidationOnCreate' => array(
-                'field' => 'created_at',
-                'format' => 'd-m-y H:i'
-            )
-        )));
     }
 
-    public function validation()
-    {
-        $validator = new Validation();
-
-        $validator->add(
-            'email_admin',
-            new Email([
-                "message" => "Email salah"
-            ])
-        );
-
-        $validator->add(
-            'email_admin',
-            new Uniqueness([
-                "message" => "Email sudah terdaftar"
-            ])
-        );
-
-        return $this->validate($validator);
-    }
+   
 }

@@ -8,7 +8,7 @@ $container['security'] = function() {
     return $security;
 };
 
-$container['url'] = function() use($config, $container){
+$container['url'] = function() use($config){
     $url = new \Phalcon\Url();
     return $url;
 };
@@ -36,11 +36,3 @@ $container['logger'] = function() {
     return $logger;
 };
 
-$container['db'] = function() use($config){
-    return new \Phalcon\Db\Adapter\Pdo\Mysql(array(
-        "host" => $config->database->host,
-        "username" => $config->database->username,
-        "password" => $config->database->password,
-        "dbname" => $config->database->dbname,
-    ));
-};

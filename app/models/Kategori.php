@@ -8,6 +8,12 @@ use Phalcon\Validation\Validator\Uniqueness;
 
 class Kategori extends Base
 {
+    protected $id;
+    protected $nama_kategori;
+    protected $updated_at;
+    protected $created_at;
+
+
     public function initialize()
     {
         $this->hasOne(
@@ -20,28 +26,44 @@ class Kategori extends Base
             )
         );
 
-        $this->addBehavior(new Timestampable(array(
-            'beforeValidationOnCreate' => array(
-                'field' => 'created_at',
-                'format' => 'd-m-Y H:i'
-            ),
-            'beforValidationOnUpdate' => array(
-                'field' => 'updated_at',
-                'format' => 'd-m-Y H:i'
-            )
-        )));
     }
 
-    public function validate()
+    public function setNamaKategori($nama_kategori)
     {
-        $validator = new Validation();
+        $this->nama_kategori = $nama_kategori;
+        return $this;
+    }
 
-        $validator->add(
-            'nama_kategori',
-            new Uniqueness([
-                "message" => "Nama kategori sudah ada"
-            ])
-        );
-        return $this->validate($validator);
+    public function setUpdatedAt($updated_at)
+    {
+        $this->updated_at = $updated_at;
+        return $this;
+    }
+
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+        return $this;
+    }
+    public function getId()
+    {
+        return $this->id;
+    }
+    public function getNamaKategori()
+    {
+        return $this->nama_kategori;
+    }
+    public function getupdatedAt()
+    {
+        return $this->updated_at;
+    }
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
+
+    public function find($parameter = Null){
+        $result = Kategori::find($parameter);
+        return $result;
     }
 }
