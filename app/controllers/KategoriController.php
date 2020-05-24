@@ -20,7 +20,7 @@ class KategoriController extends BaseController
 
     public function tambahKategoriAction()
     {
-        $this->view->disable();
+        // $this->view->disable();
         if($this->request->isPost())
         {
            

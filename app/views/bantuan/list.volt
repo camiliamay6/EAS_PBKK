@@ -28,8 +28,8 @@ Daftar Bantuan
             <tbody>
                 {% for b in bantuan %}
                 <tr>
-                    {% if id_kategori != '' %}
-                        {% if id_kategori === b.id_produk.id_kategori %}
+                    {% if id_kategori != 0 %}
+                        {% if id_kategori === b.id_produk.id_kategori.id %}
                             <td>{{ b.id }}</td>
                             <td>{{ b.nama }}</td>
                             <td>{{ b.id_produk.nama_produk}}</td>

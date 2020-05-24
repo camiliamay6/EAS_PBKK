@@ -71,7 +71,7 @@ class AdminController extends BaseController
 
     public function registerAction()
     {
-        $this->view->disable();
+        // $this->view->disable();
         var_dump($this->request->getPost());
         if($this->request->isPost())
         {

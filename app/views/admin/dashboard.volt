@@ -17,25 +17,50 @@ Dashboard Admin
         <div class="row">
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
-                    <img src="" alt="Gambar daftar bantuan">
                     <div class="caption">
-                        <h3><a href="#">Daftar Bantuan</a></h3>
+                        <h3><a href="/bantuan">Daftar Bantuan</a></h3>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
-                    <img src="" alt="gambar register">
                     <div class="caption">
-                        <h3><a href="#">Tambah Akses</a></h3>
+                        <h3><a href="/register">Tambah Akses</a></h3>
+                    </div>
+                </div>
+            </div> 
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3><a href="/bantuan/tambah">Tambah Bantuan</a></h3>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
-                    <img src="" alt="gambar tambah produk">
                     <div class="caption">
-                        <h3><a href="#">Daftar Kategori dan Produk</a></h3>
+                        <h3><a href="/kategori/tambah">Tambah Kategori</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3><a href="/produk/tambah">Tambah Produk</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3><a href="/kategori">Daftar Kategori</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3><a href="/produk">Daftar Produk</a></h3>
                     </div>
                 </div>
             </div>
