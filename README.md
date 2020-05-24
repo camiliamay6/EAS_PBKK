@@ -13,6 +13,3 @@ Fitur-fitur yang ada diantaranya yaitu:
 
 ## Fitur Tambah Kategori
 Fitur ini memungkinkan admin untuk menambah kategori bantuan. Contoh pengoperasian ditunjukkan pada gambar:
-
-![Screenshot](tambah kategori.PNG)
-![Screenshot](daftar kategori.PNG)
