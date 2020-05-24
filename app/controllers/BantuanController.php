@@ -11,23 +11,19 @@ class BantuanController extends BaseController
 {
     public function listBantuanAction()
     {
-        $this->view->disable();
-        if(!$this->request){
-        
-            $bantuan = Bantuan::find();
-        } else{
-            $id_kategori = $this->request->isPost("id_kategori");
-            $bantuan = Bantuan::find($id_kategori);
-            foreach ($bantuan as $b) {
-                var_dump($b);
-            }
-            
-        }
+        $id_kategori = '';
+        // $this->view->disable();
+        if($this->request->isPost()){
+            $id_kategori = $this->request->getPost("id_kategori");
+        }    
+        $bantuan = Bantuan::find();
         $kategori = Kategori::find();
+        $this->view->setVar('id_kategori', $id_kategori);
         $this->view->setVar('kategori', $kategori);
         $this->view->setVar('bantuan', $bantuan);
         $this->view->pick('bantuan/list');
-
+               
+        
     }
 
     public function tampilTambahBantuanAction()

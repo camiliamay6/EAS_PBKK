@@ -7,7 +7,7 @@ Daftar Bantuan
 {% block body %}
 <div class="container">
     <h1 class="page-header">Daftar Bantuan</h1>
-    <form action="filter" method="POST">
+    <form action="/bantuan/filter" method="POST">
         <div class="form-group">
             <label for="id_kategori">Filter Kategori</label>
             {{ select({'id_kategori', kategori, 'using': ['id', 'nama_kategori']}) }}
@@ -26,12 +26,22 @@ Daftar Bantuan
                 </tr>
             </thead>
             <tbody>
-                {% for b in bantuan %}>
+                {% for b in bantuan %}
                 <tr>
-                    <td>{{ b.id }}</td>
-                    <td>{{ b.nama }}</td>
-                    <td>{{ b.id_produk.nama_produk}}</td>
-                    <td>{{b.total_bantuan }}</td>
+                    {% if id_kategori != '' %}
+                        {% if id_kategori === b.id_produk.id_kategori %}
+                            <td>{{ b.id }}</td>
+                            <td>{{ b.nama }}</td>
+                            <td>{{ b.id_produk.nama_produk}}</td>
+                            <td>{{b.total_bantuan }}</td>
+                        {% endif %}
+                    {% else %}
+                        <td>{{ b.id }}</td>
+                        <td>{{ b.nama }}</td>
+                        <td>{{ b.id_produk.nama_produk}}</td>
+                        <td>{{b.total_bantuan }}</td>
+                    {% endif %}
+                    
                 </tr>
                 {% endfor %}
             </tbody>

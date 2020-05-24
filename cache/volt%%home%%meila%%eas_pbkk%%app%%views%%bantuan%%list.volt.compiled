@@ -36,7 +36,7 @@ Daftar Bantuan
     
 <div class="container">
     <h1 class="page-header">Daftar Bantuan</h1>
-    <form action="bantuan/filter" method="POST">
+    <form action="/bantuan/filter" method="POST">
         <div class="form-group">
             <label for="id_kategori">Filter Kategori</label>
             <?= $this->tag->select(['id_kategori', $kategori, 'using' => ['id', 'nama_kategori']]) ?>
@@ -55,12 +55,22 @@ Daftar Bantuan
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($bantuan as $b) { ?>>
+                <?php foreach ($bantuan as $b) { ?>
                 <tr>
-                    <td><?= $b->id ?></td>
-                    <td><?= $b->nama ?></td>
-                    <td><?= $b->id_produk->nama_produk ?></td>
-                    <td><?= $b->total_bantuan ?></td>
+                    <?php if ($id_kategori != '') { ?>
+                        <?php if ($id_kategori === $b->id_produk->id_kategori) { ?>
+                            <td><?= $b->id ?></td>
+                            <td><?= $b->nama ?></td>
+                            <td><?= $b->id_produk->nama_produk ?></td>
+                            <td><?= $b->total_bantuan ?></td>
+                        <?php } ?>
+                    <?php } else { ?>
+                        <td><?= $b->id ?></td>
+                        <td><?= $b->nama ?></td>
+                        <td><?= $b->id_produk->nama_produk ?></td>
+                        <td><?= $b->total_bantuan ?></td>
+                    <?php } ?>
+                    
                 </tr>
                 <?php } ?>
             </tbody>
