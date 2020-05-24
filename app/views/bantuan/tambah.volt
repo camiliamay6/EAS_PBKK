@@ -9,7 +9,7 @@ Tambah Bantuan
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <form action="/bantuan/tambah/submit" method="POST">
-                <h1 align="center">Tambah Produk</h1>
+                <h1 align="center">Tambah Bantuan</h1>
                 <div class="form-group">
                     <label for="nama">Nama Pemberi Bantuan</label>
                     <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama pemberi bantuan">
