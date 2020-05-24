@@ -1,7 +1,7 @@
 {% extends 'layout.volt' %}
 
 {% block pageTitle %}
-Tambah Akses
+Tambah Kategori
 {% endblock %}
 
 {% block body %}

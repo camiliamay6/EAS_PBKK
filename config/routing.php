@@ -27,6 +27,11 @@
         'action' => 'listBantuan'
     ));
 
+    $router->add('/bantuan/filter', array(
+        'controller' => 'bantuan',
+        'action' => 'listBantuan'
+    ));
+
     $router->add('/kategori', array(
         'controller' => 'kategori',
         'action' => 'listKategori'
@@ -61,4 +66,8 @@
         'action' => 'tampilTambahBantuan'
     ));
 
+    $router->add('/bantuan/tambah/submit', array(
+        'controller' => 'bantuan',
+        'action' => 'tambahBantuan'
+    ));
     return $router;

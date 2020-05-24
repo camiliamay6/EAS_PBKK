@@ -81,5 +81,4 @@ class Produk extends Base
     {
         return $this->created_at;
     }
-
 }

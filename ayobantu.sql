@@ -35,14 +35,13 @@ ON DELETE CASCADE ON UPDATE NO ACTION;
 DROP TABLE `produk`;
 
 
-CREATE TABLE IF NOT EXISTS `daftar_bantuan` (
+CREATE TABLE IF NOT EXISTS `bantuan` (
     `id` int(11) NOT NULL AUTO_INCREMENT,
-    `id_user` int(11) NOT NULL,
+    `nama` varchar(50) COLLATE utf8_unicode_ci,
     `id_produk` int(11) NOT NULL,
     `total_bantuan` int(20) NOT NULL,
-    `sudah_disetujui` tinyint(1) NOT NULL DEFAULT '0',
-    `tanggal_bantuan` datetime NOT NULL,
-    `updated_at` datetime DEFAULT NULL,
+    `created_at` varchar(50) COLLATE utf8_unicode_ci,
+    `updated_at` varchar(50) COLLATE utf8_unicode_ci,
     PRIMARY KEY (`id`),
     KEY `id_produk` (`id_produk`)
 ) ENGINE=InnoDB CHARSET=utf8 COLLATE=utf8_unicode_ci
@@ -50,8 +49,8 @@ AUTO_INCREMENT=1;
 
 
 
-ALTER TABLE `daftar_bantuan`
-ADD CONSTRAINT `keranjang_ibfk_1` FOREIGN KEY(`id_produk`) REFERENCES `produk` (`id`)
+ALTER TABLE `bantuan`
+ADD CONSTRAINT `produk_ibfk_1` FOREIGN KEY(`id_produk`) REFERENCES `produk` (`id`)
 ON UPDATE CASCADE ON DELETE CASCADE;
 
 DROP TABLE `daftar_bantuan`;
